@@ -211,8 +211,12 @@ end
 class Item
   # 以下を修正して下さい
 
-  def initialize(name)
+  def initialize(name:)
     @name = name
+  end
+
+  def name
+    @name
   end
 end
 
@@ -224,12 +228,32 @@ end
 
 class UserQ20
   # 以下に回答を記載
-
+  def initialize(name:, age:)
+    @name = name
+    @age = age
+  end
 end
 
 class Zoo
   # 以下に回答を記載
+  def initialize(name:, entry_fee:)
+    @name = name
+    @entry_fee = entry_fee
+  end
 
+  def info_entry_fee(user)
+    if @age == (0..5)
+      puts "#{@name}さんの入場料金は#{@entry_fee[:infact]} 円です。"
+    elsif @age == (6..12)
+      puts "#{@name}さんの入場料金は#{@entry_fee[:children]} 円です。"
+    elsif @age == (13..64)
+      puts "#{@name}さんの入場料金は#{@entry_fee[:adult]} 円です。"
+    elsif @age == (65..120)
+      puts "#{@name}さんの入場料金は#{@entry_fee[:senior]} 円です。"
+    else
+      ""
+    end
+  end
 end
 
 
