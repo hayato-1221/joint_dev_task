@@ -234,7 +234,6 @@ end
 
 class Zoo
   # 以下に回答を記載
-  attr_reader :name, :entry_fee
   def initialize(**params)
     @name = params[:name]
     @entry_fee = params[:entry_fee]
